@@ -487,10 +487,10 @@
 
         <div class="menu-grid" id="menuGrid">
             
-            <!-- Starter 1 -->
+            <!-- Starter 1 (UPDATED) -->
             <div class="menu-card reveal" data-category="starter">
                 <div class="card-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1599813350171-8bc6175b5b04?auto=format&fit=crop&w=600&q=80" alt="Charred Octopus">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80" alt="Charred Octopus">
                     <span class="badge">Signature</span>
                 </div>
                 <div class="card-content">
@@ -517,10 +517,10 @@
                 </div>
             </div>
 
-            <!-- Main 1 -->
+            <!-- Main 1 (UPDATED) -->
             <div class="menu-card reveal" data-category="main" style="transition-delay: 0.2s;">
                 <div class="card-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1544025162-81111421570d?auto=format&fit=crop&w=600&q=80" alt="Wagyu Brisket">
+                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=600&q=80" alt="Wagyu Brisket">
                     <span class="badge">Chef's Cut</span>
                 </div>
                 <div class="card-content">
@@ -561,10 +561,10 @@
                 </div>
             </div>
 
-            <!-- Dessert 2 -->
+            <!-- Dessert 2 (UPDATED) -->
             <div class="menu-card reveal" data-category="dessert" style="transition-delay: 0.5s;">
                 <div class="card-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1605333396914-25651e39a3eb?auto=format&fit=crop&w=600&q=80" alt="Smoked Chocolate Tart">
+                    <img src="https://images.unsplash.com/photo-1605807646983-377bc5a76493?auto=format&fit=crop&w=600&q=80" alt="Smoked Chocolate Tart">
                     <span class="badge">New</span>
                 </div>
                 <div class="card-content">
@@ -584,7 +584,7 @@
         <h2>"Where culinary art meets primal heat."</h2>
     </div>
 
-    <!-- Reservation Section (Kept Same as Previous) -->
+    <!-- Reservation Section -->
     <section class="reservation" id="reserve">
         <div class="form-container reveal">
             <div class="section-header" style="margin-bottom: 2rem;">
@@ -648,7 +648,6 @@
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
                 entry.target.classList.add('active');
-                // Don't unobserve so it re-triggers if needed, or unobserve for one-time animation
                 observer.unobserve(entry.target);
             });
         }, revealOptions);
@@ -670,7 +669,6 @@
                 menuCards.forEach(card => {
                     if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
                         card.style.display = 'flex';
-                        // Small timeout to allow display:flex to apply before animating opacity
                         setTimeout(() => {
                             card.style.opacity = '1';
                             card.style.transform = 'scale(1)';
@@ -680,7 +678,7 @@
                         card.style.transform = 'scale(0.8)';
                         setTimeout(() => {
                             card.style.display = 'none';
-                        }, 300); // Matches transition duration
+                        }, 300);
                     }
                 });
             });
@@ -696,7 +694,6 @@
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
                 
-                // Slightly reduced rotation so the image doesn't warp too much
                 const rotateX = ((y - centerY) / centerY) * -10;
                 const rotateY = ((x - centerX) / centerX) * 10;
                 
